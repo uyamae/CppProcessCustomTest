@@ -1,0 +1,25 @@
+<Project>
+  <Target Name="MyPreCompile" BeforeTargets="ClCompile">
+    <Message Text="MyPreCompile" />
+    <Message Text="ClCompile=@(ClCompile)" />
+    <Message Text="ClInclude=@(ClInclude)" />
+    <Message Text="WarningLevel=%(ClCompile.WarningLevel)" />
+    <Message Text="PreprocessorDefinitions=%(ClCompile.PreprocessorDefinitions)" />
+    <Message Text="Optimization=%(ClCompile.Optimization)" />
+    <Message Text="ForcedIncludeFiles=%(ClCompile.ForcedIncludeFiles)" />
+    <Message Text="IgnoreStandardIncludePath=%(ClCompile.IgnoreStandardIncludePath)" />
+    <Message Text="LanguageStandard=%(ClCompile.LanguageStandard)" />
+    <Message Text="LanguageStandard_C=%(ClCompile.LanguageStandard_C)" />
+    <Message Text="OmitDefaultLibName=%(ClCompile.OmitDefaultLibName)" />
+    <Message Text="FavorSizeOrSpeed=%(ClCompile.FavorSizeOrSpeed)" />
+    <Message Text="PrecompiledHeader=%(ClCompile.PrecompiledHeader)" />
+    <Message Text="PrecompiledHeaderFile=%(ClCompile.PrecompiledHeaderFile)" />
+    <Message Text="PrecompiledHeaderOutputFile=%(ClCompile.PrecompiledHeaderOutputFile)" />
+    <Message Text="SourceDependenciesFile=%(ClCompile.SourceDependenciesFile)" />
+    <Message Text="StructMemberAlignment=%(ClCompile.StructMemberAlignment)" />
+    <Message Text="TranslateIncludes=%(ClCompile.TranslateIncludes)" />
+    <Message Text="IncludePath=$(IncludePath)" />
+    <Message Text="ExternalIncludePath=$(ExternalIncludePath)" />
+    <Message Text="SourcePath=$(SourcePath)" />
+  </Target>
+</Project>
