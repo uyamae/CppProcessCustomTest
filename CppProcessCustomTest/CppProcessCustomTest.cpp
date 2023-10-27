@@ -2,9 +2,11 @@
 //
 
 #include <iostream>
+#include "MyClass.h"
 
 int main()
 {
+    MyClass c;
     std::cout << "Hello World!\n";
 }
 
