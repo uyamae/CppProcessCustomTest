@@ -1,0 +1,50 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <!-- NuGet package settings -->
+    <version>1.0.0</version>
+    <title>CppCustomTask</title>
+    <author>uyamae</author>
+    <description>Cpp Custom Task</description>
+    <tags>C++ MSBuild Task</tags>
+    <copyright>© uyamae 2023</copyright>
+    <GenerateDependencyFile>true</GenerateDependencyFile>
+    <TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);CopyProjectReferencesToPackage</TargetsForTfmSpecificBuildOutput>
+    <BuildOutputTargetFolder>tasks</BuildOutputTargetFolder>
+    <NoWarn>NU5100</NoWarn>
+    <DebugType>embedded</DebugType>
+    <IsPackable>true</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Build" Version="15.9.20" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.Build.Utilities.Core" Version="15.9.20" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="build\CppCustomTask.props" PackagePath="build\" />
+    <Content Include="build\CppCustomTask.targets" PackagePath="build\" />
+  </ItemGroup>
+
+  <Target Name="CopyProjectReferencesToPackage" DependsOnTargets="ResolveReferences">
+    <ItemGroup>
+      <BuildOutputInPackage
+        Include="@(ReferenceCopyLocalPaths)"
+        TargetPath="%(ReferenceCopyLocalPaths.DestinationSubPath)" />
+    </ItemGroup>
+  </Target>
+
+  <Target
+    Name="AddBuildDependencyFileToBuiltProjectOutputGroupOutput"
+    BeforeTargets="BuiltProjectOutputGroup"
+    Condition=" '$(GenerateDependencyFile)' == 'true' ">
+    <ItemGroup>
+      <BuiltProjectOutputGroup
+        Include="$(ProjectDepsFilePath)"
+        TargetPath="$(ProjectDepsFileName)"
+        FinalOutputPath="$(ProjectDepsFilePath)" />
+    </ItemGroup>
+  </Target>
+
+</Project>
