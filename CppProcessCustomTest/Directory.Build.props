@@ -1,0 +1,3 @@
+<Project>
+  <Import Project="packages\CppCustomTask.1.0.0\build\CppCustomTask.props" Condition="Exists('packages\CppCustomTask.1.0.0\build\CppCustomTask.props')" />
+</Project>

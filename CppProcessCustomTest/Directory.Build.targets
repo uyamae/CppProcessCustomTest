@@ -1,4 +1,5 @@
 <Project>
+
   <Target Name="MyPreCompile" BeforeTargets="ClCompile">
     <Message Text="MyPreCompile" />
     <Message Text="ClCompile=@(ClCompile)" />
@@ -22,4 +23,9 @@
     <Message Text="ExternalIncludePath=$(ExternalIncludePath)" />
     <Message Text="SourcePath=$(SourcePath)" />
   </Target>
+
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="packages\CppCustomTask.1.0.0\build\CppCustomTask.targets" Condition="Exists('packages\CppCustomTask.1.0.0\build\CppCustomTask.targets')" />
+  </ImportGroup>
+
 </Project>

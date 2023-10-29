@@ -17,3 +17,15 @@ MSBuild の機能を使用して、ビルドプロセスに独自の処理を挿
 msbuild コマンドを実行するとMyPreCompile ターゲットでいくつかの
 プロパティやメタデータを標準出力に書き出します。
 この内容はDirectory.Build.targets で定義しています。
+
+## 自作のカスタムタスクを適用する
+
+コマンドラインで以下を実行します。
+
+```
+> msbuild .\CppCustomTask\CppCustomTask.csproj /t:pack
+> nuget install CppCustomTask -Source (CppCustomTask\bin\Debug へのフルパス) -OutputDirectory .\CppProcessCustomTest\packages
+> msbuild .\CppProcessCustomTest\CppProcessCustomTest.vcxproj /p:Platform=x64 /p:Configuration=Debug
+```
+
+CppProcessCustomTask からCppCustomTask を利用する設定はDirectory.Build.props, Directory.Build.targets に記述しています。
