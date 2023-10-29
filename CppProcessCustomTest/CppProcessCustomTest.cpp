@@ -3,10 +3,12 @@
 
 #include <iostream>
 #include "MyClass.h"
+#include "MyModule.h"
 
 int main()
 {
     MyClass c;
+    MyModule m;
     std::cout << "Hello World!\n";
 }
 

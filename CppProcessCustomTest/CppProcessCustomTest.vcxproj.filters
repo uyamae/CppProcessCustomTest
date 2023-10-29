@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\MyModule">
+      <UniqueIdentifier>{a1fff1da-035d-4990-9529-40597fe9685f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\MyModule">
+      <UniqueIdentifier>{91cfe188-d6bf-4ed1-bb7d-d3bee8955667}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CppProcessCustomTest.cpp">
@@ -21,10 +27,16 @@
     <ClCompile Include="MyClass.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MyModule\MyModule.cpp">
+      <Filter>Source Files\MyModule</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyClass.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MyModule\MyModule.h">
+      <Filter>Header Files\MyModule</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
