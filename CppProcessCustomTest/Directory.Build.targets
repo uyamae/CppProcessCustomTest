@@ -1,6 +1,6 @@
 <Project>
 
-  <Target Name="MyPreCompile" BeforeTargets="ClCompile">
+  <Target Name="MyPreCompile" BeforeTargets="ClCompile" Condition="false">
     <Message Text="MyPreCompile" />
     <Message Text="ClCompile=@(ClCompile)" />
     <Message Text="ClInclude=@(ClInclude)" />

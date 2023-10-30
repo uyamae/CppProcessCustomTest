@@ -5,11 +5,16 @@
 #include "MyClass.h"
 #include "MyModule.h"
 
+namespace MyClass_private {
+  extern const char * prepro_defs;
+} // namespace MyClass_private
+
 int main()
 {
     MyClass c;
     MyModule m;
     std::cout << "Hello World!\n";
+    std::cout << MyClass_private::prepro_defs <<std::endl;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

@@ -5,7 +5,9 @@
       SourcePath="@(ClCompile)"
       Definitions="%(ClCompile.PreprocessorDefinitions)"
       IncludePaths="$(IncludePath);%(ClCompile.AdditionalIncludeDirectories)"
-      />
+      OutputDir="$(CppCustomOutputDir)">
+			<Output TaskParameter="OutputPaths" ItemName="ClCompile" />
+    </CppCustomTask.CppCustomTask>
   </Target>
 
 </Project>

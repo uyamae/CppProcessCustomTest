@@ -9,4 +9,8 @@
     TaskName="$(MSBuildThisFileName).$(MSBuildThisFileName)"
     AssemblyFile="$(CustomTasksAssembly)" />
 
+  <PropertyGroup>
+    <CppCustomOutputDir Condition=" '$(CppCustomOutputDir)' == '' ">$(ProjectDir)generated</CppCustomOutputDir>
+  </PropertyGroup>
+
 </Project>
